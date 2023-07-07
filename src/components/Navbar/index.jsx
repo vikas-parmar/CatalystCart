@@ -17,7 +17,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Box component="header" height="10vh">
+    <Box component="header" height="60px">
       <Box
         component="nav"
         display="flex"
@@ -34,32 +34,17 @@ const Navbar = () => {
           justifyContent={{ xs: "flex-end", md: "flex-start" }}
         >
           <Link to="/products/1">
-            <Button
-              variant="text"
-              size="small"
-              sx={{ fontWeight: "700" }}
-              color="gray"
-            >
+            <Button variant="text" sx={{ fontWeight: "700" }} color="gray">
               Men
             </Button>
           </Link>
           <Link to="/products/2">
-            <Button
-              variant="text"
-              size="small"
-              sx={{ fontWeight: "700" }}
-              color="gray"
-            >
+            <Button variant="text" sx={{ fontWeight: "700" }} color="gray">
               Women
             </Button>
           </Link>
           <Link to="/products/3">
-            <Button
-              variant="text"
-              size="small"
-              sx={{ fontWeight: "700" }}
-              color="gray"
-            >
+            <Button variant="text" sx={{ fontWeight: "700" }} color="gray">
               Accesories
             </Button>
           </Link>
@@ -92,16 +77,16 @@ const Navbar = () => {
           gap={{ xs: 0, md: 1 }}
           justifyContent="flex-end"
         >
-          <IconButton type="button" size="small">
+          <IconButton type="button">
             <Search color="gray" />
           </IconButton>
-          <IconButton size="small">
+          <IconButton>
             <PersonOutlineIcon color="gray" />
           </IconButton>
-          <IconButton size="small">
+          <IconButton>
             <FavoriteBorderIcon color="gray" />
           </IconButton>
-          <IconButton size="small" onClick={() => setOpen(!open)}>
+          <IconButton onClick={() => setOpen(!open)}>
             <Badge badgeContent={4} color="primary">
               <ShoppingCartOutlined color="gray" />
             </Badge>

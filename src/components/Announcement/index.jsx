@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 const Announcement = () => {
   return (
     <Box
-      height="7vh"
+      height="40px"
       bgcolor="primary.main"
       color="white"
       display="flex"
