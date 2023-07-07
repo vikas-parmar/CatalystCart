@@ -51,6 +51,9 @@ const Image = styled.img`
 const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
 `;
 
 const Desc = styled.p`
@@ -95,7 +98,7 @@ const Slider = () => {
               <Button
                 variant="outlined"
                 color="secondary"
-                sx={{ p: "10px", fontSize: "1.2rem", letterSpacing: "1px" }}
+                sx={{ width: "fit-content", p: "10px", fontSize: "1.2rem", letterSpacing: "1px" }}
               >
                 SHOW NOW
               </Button>
