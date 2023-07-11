@@ -1,23 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import Card from "../Card";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { Card } from "components";
+import { products } from "data";
 
 const Top = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
-`;
-
-const Title = styled.h1`
-  flex: 2;
-  text-transform: capitalize;
-`;
-
-const Article = styled.div`
-  flex: 3;
-  color: gray;
 `;
 
 const Bottom = styled.div`
@@ -42,84 +33,27 @@ const Bottom = styled.div`
   gap: 50px;
 `;
 
-const data = [
-  {
-    id: 1,
-    img: "https://assets.ajio.com/medias/sys_master/root/20230628/wymG/649c1a80a9b42d15c913ccfa/-473Wx593H-462323964-pink-MODEL4.jpg",
-    img2: "https://assets.ajio.com/medias/sys_master/root/20230628/roXL/649c1847eebac147fc2988f0/-473Wx593H-462323964-pink-MODEL5.jpg",
-    title: "Full Sleeves Slim Fit Classic Shirt",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Doloribus odit voluptatibus ullam a adipisci sapiente nesciunt blanditiis facere cum odio.",
-    isNew: true,
-    oldPrice: 1849,
-    newPrice: 684,
-  },
-  {
-    id: 2,
-    img: "https://assets.ajio.com/medias/sys_master/root/20230621/sz1G/6492201642f9e729d7599d47/-1117Wx1400H-463378835-brown-MODEL.jpg",
-    img2: "https://assets.ajio.com/medias/sys_master/root/20230621/DNBo/6492201642f9e729d7599d8c/-1117Wx1400H-463378835-brown-MODEL2.jpg",
-    title: "Checked Slim Fit Shirt with Patch Pocket",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Doloribus odit voluptatibus ullam a adipisci sapiente nesciunt blanditiis facere cum odio.",
-    isNew: true,
-    oldPrice: 1248,
-    newPrice: 1400,
-  },
-  {
-    id: 3,
-    img: "https://assets.ajio.com/medias/sys_master/root/20230628/wymG/649c1a80a9b42d15c913ccfa/-473Wx593H-462323964-pink-MODEL4.jpg",
-    img2: "https://assets.ajio.com/medias/sys_master/root/20230628/roXL/649c1847eebac147fc2988f0/-473Wx593H-462323964-pink-MODEL5.jpg",
-    title: "Full Sleeves Slim Fit Classic Shirt",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Doloribus odit voluptatibus ullam a adipisci sapiente nesciunt blanditiis facere cum odio.",
-    isNew: false,
-    oldPrice: 1849,
-    newPrice: 684,
-  },
-  {
-    id: 4,
-    img: "https://assets.ajio.com/medias/sys_master/root/20230621/sz1G/6492201642f9e729d7599d47/-1117Wx1400H-463378835-brown-MODEL.jpg",
-    img2: "https://assets.ajio.com/medias/sys_master/root/20230621/DNBo/6492201642f9e729d7599d8c/-1117Wx1400H-463378835-brown-MODEL2.jpg",
-    title: "Checked Slim Fit Shirt with Patch Pocket",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Doloribus odit voluptatibus ullam a adipisci sapiente nesciunt blanditiis facere cum odio.",
-    isNew: true,
-    oldPrice: 1248,
-    newPrice: 1400,
-  },
-  {
-    id: 5,
-    img: "https://assets.ajio.com/medias/sys_master/root/20230628/wymG/649c1a80a9b42d15c913ccfa/-473Wx593H-462323964-pink-MODEL4.jpg",
-    img2: "https://assets.ajio.com/medias/sys_master/root/20230628/roXL/649c1847eebac147fc2988f0/-473Wx593H-462323964-pink-MODEL5.jpg",
-    title: "Full Sleeves Slim Fit Classic Shirt",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Doloribus odit voluptatibus ullam a adipisci sapiente nesciunt blanditiis facere cum odio.",
-    isNew: false,
-    oldPrice: 1849,
-    newPrice: 684,
-  },
-  {
-    id: 6,
-    img: "https://assets.ajio.com/medias/sys_master/root/20230621/sz1G/6492201642f9e729d7599d47/-1117Wx1400H-463378835-brown-MODEL.jpg",
-    img2: "https://assets.ajio.com/medias/sys_master/root/20230621/DNBo/6492201642f9e729d7599d8c/-1117Wx1400H-463378835-brown-MODEL2.jpg",
-    title: "Checked Slim Fit Shirt with Patch Pocket",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Doloribus odit voluptatibus ullam a adipisci sapiente nesciunt blanditiis facere cum odio.",
-    isNew: true,
-    oldPrice: 1248,
-    newPrice: 1400,
-  },
-];
-
 const FeaturedProducts = ({ type }) => {
   return (
     <Box width="100%" p={2}>
       <Top>
-        <Title>{type} products</Title>
-        <Article>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-          suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-          lacus vel facilisis labore et dolore magna aliqua. Quis ipsum
-          suspendisse ultrices gravida. Risus commodo viverra maecenas.
-        </Article>
+        <Typography
+          variant="h3"
+          flex={2}
+          textTransform="capitalize"
+        >
+          {type} products
+        </Typography>
+        <Typography variant="subtitle1" flex={3} color="gray">
+          Indulge in the latest fashion trends and discover a world of
+          possibilities with our {type} products. From luxurious fabrics to
+          impeccable craftsmanship, each item is designed to make a statement.
+          Whether you're seeking a timeless classic or a bold and edgy piece,
+          our collection has something for everyone.
+        </Typography>
       </Top>
       <Bottom>
-        {data?.map((item) => (
+        {products?.map((item) => (
           <Card item={item} key={item.id} />
         ))}
       </Bottom>

@@ -1,6 +1,6 @@
 import { Outlet, createBrowserRouter } from "react-router-dom";
-import { Home, Product, Checkout, Login, Register, ProductList } from "./pages";
-import { Announcement, Footer, Navbar, NewsLetter } from "./components";
+import { Home, Product, Checkout, Login, Register, ProductList } from "pages";
+import { Announcement, Footer, Navbar, NewsLetter, Note } from "components";
 
 const Layout = () => {
   return (
@@ -45,4 +45,8 @@ export const routes = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
+  {
+    path: "/toBeMadeSoon",
+    element: <Note />
+  }
 ]);

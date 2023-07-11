@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { popularProducts } from "../../data";
-import Product from "./Product";
+import { LatestArrivals } from "data";
+import Product from "components/Products/Product";
 
 const Container = styled.div`
   paddding: 20px;
@@ -12,7 +12,7 @@ const Container = styled.div`
 const Products = () => {
   return (
     <Container>
-      {popularProducts.map((item) => (
+      {LatestArrivals.map((item) => (
         <Product item={item} key={item.id} />
       ))}
     </Container>

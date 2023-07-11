@@ -3,7 +3,7 @@ import {
   Categories,
   Products,
   FeaturedProducts,
-} from "../../components";
+} from "components";
 
 const Home = () => {
   return (

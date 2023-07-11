@@ -1,6 +1,5 @@
+import { Box, Button, Typography } from "@mui/material";
 import styled from "styled-components";
-import { mobile } from "../../theme";
-import { tab } from "../../theme";
 
 const Container = styled.div`
   width: 100vw;
@@ -17,25 +16,6 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Wrapper = styled.div`
-  width: 40%;
-  padding: 20px;
-  background-color: white;
-  ${mobile({ width: "90%", textAlign: "center" })}
-  ${tab({ width: "70%" })}
-`;
-
-const Title = styled.h1`
-  font-size: 24px;
-  font-weight: 300;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-wrap: wrap;
-  ${mobile({ flexDirection: "column", alignItems: "center" })};
-`;
-
 const Input = styled.input`
   flex: 1;
   min-width: 40%;
@@ -43,39 +23,54 @@ const Input = styled.input`
   padding: 10px;
 `;
 
-const Agreement = styled.span`
-  font-size: 12px;
-  margin: 20px 0px;
-`;
-
-const Button = styled.button`
-  width: 40%;
-  border: none;
-  padding: 15px 20px;
-  background-color: teal;
-  color: white;
-  cursor: pointer;
-`;
-
 const Register = () => {
   return (
     <Container>
-      <Wrapper>
-        <Title>CREATE AN ACCOUNT</Title>
-        <Form>
-          <Input placeholder="First Name" />
-          <Input placeholder="Last Name" />
-          <Input placeholder="Create Username" />
-          <Input placeholder="Enter Your Email" />
-          <Input placeholder="Create Password" />
-          <Input placeholder="Confirm Password" />
-          <Agreement>
+      <Box
+        width={{ xs: "80%", sm: "70%", md: "40%" }}
+        textAlign={{ xs: "center", sm: "left" }}
+        p={2}
+        bgcolor="white"
+      >
+        <Typography variant="h4" gutterBottom>
+          CREATE AN ACCOUNT
+        </Typography>
+        <Box
+          component="form"
+          display="flex"
+          flexWrap="wrap"
+          flexDirection={{ xs: "column", sm: "row" }}
+          alignItems={{ xs: "center", sm: "flex-start" }}
+        >
+          <Input type="text" maxLength="30" placeholder="First Name" required />
+          <Input type="text" maxLength="30" placeholder="Last Name" required />
+          <Input
+            type="text"
+            maxLength="50"
+            placeholder="Create Username"
+            required
+          />
+          <Input type="email" placeholder="Enter Your Email" required />
+          <Input type="password" placeholder="Create Password" required />
+          <Input type="password" placeholder="Confirm Password" required />
+
+          <Typography variant="subtitle1" mt={{ xs: 1, sm: 2 }} gutterBottom>
             By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
-          </Agreement>
-          <Button>CREATE</Button>
-        </Form>
-      </Wrapper>
+          </Typography>
+          <Button
+            type="submit"
+            variant="contained"
+            sx={{
+              width: "40%",
+              p: "15px 20px",
+              borderRadius: "0px",
+            }}
+          >
+            CREATE
+          </Button>
+        </Box>
+      </Box>
     </Container>
   );
 };

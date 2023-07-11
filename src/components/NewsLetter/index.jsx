@@ -4,8 +4,9 @@ import { Send } from "@mui/icons-material";
 const NewsLetter = () => {
   return (
     <Box
-      height="60vh"
+      height="40vh"
       bgcolor="primary.light"
+      color="wheat"
       display="flex"
       flexDirection="column"
       alignItems="center"

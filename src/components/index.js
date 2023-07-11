@@ -6,6 +6,7 @@ export { default as FeaturedProducts } from "./FeaturedProducts";
 export { default as Footer } from "./Footer";
 export { default as List } from "./List";
 export { default as Navbar } from "./Navbar";
+export { default as Note } from "./Note";
 export { default as NewsLetter } from "./NewsLetter";
 export { default as Products } from "./Products/Products";
 export { default as Slider } from "./Slider";

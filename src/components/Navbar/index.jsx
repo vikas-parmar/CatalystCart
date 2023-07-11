@@ -2,11 +2,11 @@ import { Search, ShoppingCartOutlined } from "@mui/icons-material";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { Badge, Box, Button, IconButton, Typography } from "@mui/material";
-import logo from "../../assets/logo1.jpg";
+import logo from "assets/logo1.jpg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Cart from "../Cart";
+import { Cart } from "components";
 
 const Image = styled.img`
   width: ${({ size }) => size};

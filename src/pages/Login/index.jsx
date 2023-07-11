@@ -1,6 +1,16 @@
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import {
+  Box,
+  Button,
+  IconButton,
+  InputAdornment,
+  OutlinedInput,
+  Typography,
+} from "@mui/material";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { mobile } from "../../theme";
-import { tab } from "../../theme";
 
 const Container = styled.div`
   width: 100vw;
@@ -17,62 +27,83 @@ const Container = styled.div`
   background-size: cover;
 `;
 
-const Wrapper = styled.div`
-  width: 25%;
-  padding: 20px;
-  background-color: white;
-  ${mobile({ width: "75%", textAlign: "center" })}
-  ${tab({ width: "60%" })}
-`;
-
-const Title = styled.h1`
-  font-size: 24px;
-  font-weight: 300;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  ${mobile({ alignItems: "center" })};
-`;
-
-const Input = styled.input`
-  flex: 1;
-  min-width: 40%;
-  margin: 10px 0;
-  padding: 10px;
-`;
-
-const Button = styled.button`
-  width: 40%;
-  border: none;
-  padding: 15px 20px;
-  background-color: teal;
-  color: white;
-  cursor: pointer;
-  margin-bottom: 10px;
-`;
-
-const Link = styled.a`
-  margin: 5px 0px;
-  font-size: 12px;
-  text-decoration: underline;
-  cursor: pointer;
-`;
-
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <Container>
-      <Wrapper>
-        <Title>SIGN IN</Title>
-        <Form>
-          <Input placeholder="Username Or Number" />
-          <Input placeholder="Password" />
-          <Button>LOGIN</Button>
-          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
-        </Form>
-      </Wrapper>
+      <Box
+        width={{ xs: "75%%", sm: "70%", md: "30%" }}
+        textAlign={{ xs: "center", sm: "left" }}
+        p={2}
+        gap={1}
+        bgcolor="white"
+      >
+        <Typography variant="h4" gutterBottom>
+          {" "}
+          SIGN IN
+        </Typography>
+        <Box
+          component="form"
+          display="flex"
+          flexWrap="wrap"
+          flexDirection="column"
+          gap={1}
+          alignItems={{ xs: "center", sm: "flex-start" }}
+        >
+          <OutlinedInput
+            type="text"
+            placeholder="Username Or Number"
+            fullWidth
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton edge="end">
+                  <AccountCircleIcon />
+                </IconButton>
+              </InputAdornment>
+            }
+            required
+          />
+          <OutlinedInput
+            type={showPassword ? "text" : "password"}
+            placeholder="Enter password"
+            fullWidth
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+            required
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            sx={{
+              width: "40%",
+              borderRadius: "0px",
+            }}
+          >
+            LOGIN
+          </Button>
+          <Box>
+            <Link to="/toBeMadeSoon">DO NOT YOU REMEMBER THE PASSWORD?</Link>{" "}
+            <br />
+            <Link to="/register">CREATE A NEW ACCOUNT</Link>
+          </Box>
+        </Box>
+      </Box>
     </Container>
   );
 };

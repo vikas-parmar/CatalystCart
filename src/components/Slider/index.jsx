@@ -2,7 +2,7 @@ import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOu
 import ArrowCircleLeftOutlinedIcon from "@mui/icons-material/ArrowCircleLeftOutlined";
 import { useState } from "react";
 import styled from "styled-components";
-import { sliderItems } from "../../data";
+import { sliderItems } from "data";
 import { Box, Button, Typography } from "@mui/material";
 
 const Arrow = styled.div`
@@ -65,6 +65,7 @@ const Desc = styled.p`
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
+  
   const handleClick = (direction) => {
     if (direction === "left") {
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
@@ -76,7 +77,7 @@ const Slider = () => {
   return (
     <Box
       maxWidth="false"
-      height="100vh"
+      height="90vh"
       display={{ xs: "none", sm: "flex" }}
       position="relative"
       overflow="hidden"

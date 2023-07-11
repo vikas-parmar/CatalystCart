@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Box } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { List } from "../../components";
+import { List } from "components";
 
 const Left = styled.div`
   flex: 1;
